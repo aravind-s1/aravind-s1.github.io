@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cookiesContent {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;}
+button.close {
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 82px;
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+  button.accept {
+    background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+  }
+
+            .answer{
+                display: flex;
+                flex-direction: column;
+			    justify-content: space-evenly;
+			    align-items: center;
+			    height: 100vh;
+            }
+            .acard
+            {
+                background: white;
+                border: 1px black solid;
+                border-radius: 5px;
+            }
+            .acard img{
+                height: 200px;
+                width: 140px;
+            }
+            .sec{
+                display: flex;
+                width: 100%;
+			    justify-content: space-evenly;
+			    align-items: center;
+            }
+    		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #e8e8e8;
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+        .card{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        img{
+            border-radius: 5px;
+            height: 300px;
+            width: 220px;
+        }
+        #overlay{
+            position: fixed;
+            opacity: 0;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #overlay1{
+            z-index: -1;
+            position: fixed;
+            opacity: 0;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .acard:hover{
+            transform: scale(1.01);
+            transition: 'transform 1000ms linear';
+        }
+        
+        @keyframes animateright{
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translate(50%);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+        @keyframes animateleft {
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translate(-60%);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+    @keyframes pick {
+        0%{
+            transform: translate(0px);
+        }
+        100%{
+            transform: translate(-300px);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id='head' style="text-align: center;"><h1>Vanila JS Find</h1></div>
+    <div class="container">
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+        <div class="card"><img src='./png/back.png'></div>
+    </div>
+    <div id="overlay"></div>
+    <div id="overlay1"></div>
+        <script>
+            let fin_card=[]
+            function create(){
+                const arr=['red','blue','green','yellow','orange','grey']
+                var cards = document.querySelectorAll('.card')
+                var i=0
+                cards.forEach((card)=>{
+                card.style.marginTop=i*0.4+'px'
+                card.style.marginLeft=i*0.4+'px'
+                card.style.zIndex=-i
+                console.log(card.style.animationName)
+                i=i+1
+            })
+            }
+            function shuffle(){
+                var cards = document.querySelectorAll('.card')
+                var i=0
+                var d=100
+                cards.forEach((card)=>{
+                    card.style.animationName= ((i%2)==0?'animateright':'animateleft')
+                    card.style.animationDuration = d+'ms'
+                    i=i+1
+                    d=d+20
+                })
+                }
+            function pick_a_card()
+            {
+                var card = document.querySelector('.card')
+                card.style.transition = '1s'
+                card.style.transform='translate(500px) rotate(360deg)'
+                var container = document.querySelector('.container')
+                container.style.transition='2s'
+                container.style.transform='translate(-400px)'
+            }
+            const val=['A (1).png', 'A (2).png', 'A (3).png', 'A (4).png', '2 (1).png', '2 (2).png', '2 (3).png', '2 (4).png', '3 (1).png', '3 (2).png', '3 (3).png', '3 (4).png', '4 (1).png', '4 (2).png', '4 (3).png', '4 (4).png', '5 (1).png', '5 (2).png', '5 (3).png', '5 (4).png', '6 (1).png', '6 (2).png', '6 (3).png', '6 (4).png', '7 (1).png', '7 (2).png', '7 (3).png', '7 (4).png', '8 (1).png', '8 (2).png', '8 (3).png', '8 (4).png', '9 (1).png', '9 (2).png', '9 (3).png', '9 (4).png', '10 (1).png', '10 (2).png', '10 (3).png', '10 (4).png', 'J (1).png', 'J (2).png', 'J (3).png', 'J (4).png', 'Q (1).png', 'Q (2).png', 'Q (3).png', 'Q (4).png', 'K (1).png', 'K (2).png', 'K (3).png', 'K (4).png']
+            function getRandomSubsetFromArray(arr, sample_size) {
+            let shuffled = arr.slice(0), i = arr.length, min = i - sample_size, temp, index;
+            while (i-- > min) {
+                index = Math.floor((i + 1) * Math.random());
+                temp = shuffled[index];
+                shuffled[index] = shuffled[i];
+                shuffled[i] = temp;
+            }
+            return shuffled.slice(min);
+            }
+            create()
+            shuffle()
+            setTimeout(pick_a_card,1000)
+            const rand_cards = getRandomSubsetFromArray(val,4)
+            const win = Math.floor(Math.random()*4)
+            function a(event){
+                        var overlay = document.querySelector('#overlay1')
+                        overlay.style.opacity = 1
+                        overlay.style.zIndex = 1
+                        overlay.innerHTML = `<div class="container">
+                        <div class="cookiesContent" id="cookiesPopup">
+                        <h1>${event.target.id==String(win+1)?'HOORAY!!! You found the right card':'OOPS.. Wrong card'}</h1>
+                        <button class="accept" onclick='window.location.reload()'>PLAY AGAIN</button>
+                        </div>
+                        </div>`
+                }
+            setTimeout(()=>{
+                document.getElementById('head').style.display= 'none'
+                var overlay = document.querySelector('#overlay')
+                overlay.style.opacity = 1
+                overlay.style.transition = '500ms linear'
+                overlay.innerHTML = `
+                <div class='answer'>
+                <h1 style='color:#f9ffb8;text-align:center'>Find the card?</h1>
+                <div class='sec'><div class='acard' onclick=a(event)><img id=1 class='ansc' src='./png/${rand_cards[0]}' ></div>
+                <div class='acard' onclick=a(event)><img id=2 class='ansc' src='./png/${rand_cards[1]}'></div></div>
+                <div class='sec'><div class='acard' onclick=a(event)><img id=3 class='ansc' src='./png/${rand_cards[2]}'></div>
+                <div class='acard'onclick=a(event)><img id=4 class='ansc' src='./png/${rand_cards[3]}'></div></div>
+                </div>`
+            },3000)
+
+        </script>
+</body>
+</html>
